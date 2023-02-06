@@ -36,6 +36,15 @@ public class Main {
             return null;
         });
         
+        get("/edit_feed/:id", (rq, rs) -> new FeedController().editScreen(rq, rs), new MustacheTemplateEngine());
+        
+        post("/edit_feed", (rq, rs) -> {
+            new FeedController().edit(rq, rs);
+            rs.redirect("/");
+            return null;
+        });
+
+        
         get("/remove_feed/:id", (rq, rs) -> {
             new FeedController().removeFeed(rq,rs);
             rs.redirect("/");

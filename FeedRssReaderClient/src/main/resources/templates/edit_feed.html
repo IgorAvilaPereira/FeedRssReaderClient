@@ -14,12 +14,13 @@
                 </ul>
             </div>
             <div style="margin-left: 500px;">  
-                <h1>My Feeds</h1>
-                {{#vetFeed}}        
-                <ul>
-                    <li> <a href="/remove_feed/{{id}}">Remove</a> <a href="/edit_feed/{{id}}">Edit</a> {{name}}</li>
-                </ul>                 
-                {{/vetFeed}} 
+                <h1>Edit Feed</h1>
+                <form action ="/edit_feed" method="post">
+                    Name: <input type="text" name="name" value="{{name}}" required="required"> <br>
+                    Url: <input type="text" name="url" value="{{url}}" required="required"> <br>
+                    <input type="hidden" name="id" value="{{id}}"> <br>
+                    <input type="submit" value="Edit">
+                </form>
             </div>
         </div>
     </body>
