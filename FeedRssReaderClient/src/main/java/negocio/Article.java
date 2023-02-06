@@ -63,13 +63,7 @@ public class Article {
 
     @Override
     public String toString() {
-        return "Article{"
-                + "title='" + title + '\''
-                + ", link='" + link + '\''
-                + ", imgUrl='" + imgUrl + '\''
-                + ", categories=" + categories
-                + ", publishedDate='" + publishedDate + '\''
-                + '}';
+        return "Article{" + "title=" + title + ", link=" + link + ", imgUrl=" + imgUrl + ", categories=" + categories + ", body=" + body + ", publishedDate=" + publishedDate + '}';
     }
 
     public static Article mapToArticle(SyndEntry syndEntry) {
