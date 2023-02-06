@@ -73,9 +73,9 @@ public class Article {
     
       public static Article mapToArticle(SyndEntry syndEntry) {
         Article newsArticle = new Article();    
-          System.out.println("========");
-          System.out.println(syndEntry.getDescription().getValue());
-          System.out.println("========");
+//          System.out.println("========");
+//          System.out.println(syndEntry.getDescription().getValue());
+//          System.out.println("========");
         newsArticle.setTitle(syndEntry.getTitle());
         newsArticle.setPublishedDate(syndEntry.getPublishedDate().toString());
         newsArticle.setImgUrl("");
