@@ -36,7 +36,7 @@ public class FeedController {
     public ModelAndView index(Request rq, Response rs) throws MalformedURLException, IOException, FeedException, SQLException {
         Map map = new HashMap();
         map.put("vetFeed", this.feedDAO.list());
-        rs.type("text/html");
+//        rs.type("text/html");
         return new ModelAndView(map, "index.html");
     }
 

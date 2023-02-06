@@ -61,15 +61,19 @@ public class Feed {
         this.url = url;
     }
 
-    public ArrayList<Article> read() throws IOException, FeedException {
+    public ArrayList<Article> read() throws IOException {
+        ArrayList<Article> results = new ArrayList();
         URL feedSource = new URL(this.getUrl());
         SyndFeedInput input = new SyndFeedInput();
-        SyndFeed feed = input.build(new XmlReader(feedSource));
-        Iterator itr = feed.getEntries().iterator();
-        ArrayList<Article> results = new ArrayList();
-        while (itr.hasNext()) {
-            SyndEntry syndEntry = (SyndEntry) itr.next();
-            results.add(Article.mapToArticle(syndEntry));
+        try {
+            SyndFeed feed = input.build(new XmlReader(feedSource));
+            Iterator itr = feed.getEntries().iterator();            
+            while (itr.hasNext()) {
+                SyndEntry syndEntry = (SyndEntry) itr.next();
+                results.add(Article.mapToArticle(syndEntry));
+            }
+        } catch(FeedException e){
+            return results;
         }
         return results;
     }
