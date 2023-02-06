@@ -4,7 +4,7 @@
  */
 package trash;
 
-import persistencia.MyConnection;
+import persistence.MyConnection;
 
 /**
  *

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package apresentacao;
+package main;
 
 /**
  *
@@ -11,10 +11,10 @@ package apresentacao;
 import trash.ArticleController;
 import controller.FeedController;
 import java.util.ArrayList;
-import negocio.Article;
+import model.Article;
 import java.util.HashMap;
 import java.util.Map;
-import persistencia.MyConnection;
+import persistence.MyConnection;
 import spark.ModelAndView;
 import static spark.Spark.*;
 import spark.template.mustache.MustacheTemplateEngine;
