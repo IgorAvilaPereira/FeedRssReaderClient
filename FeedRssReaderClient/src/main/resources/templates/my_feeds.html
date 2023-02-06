@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>FeedClient</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div style="width: 100%; overflow: hidden;">
+            <div id="left_menu" style="width: 400px; float: left;"> 
+                <b>Feeds</b>
+                <ul>
+                    <li><a href="/">Read Feeds</a></li>
+                    <li><a href="/my_feeds">My Feeds</a></li>
+                    <li><a href="/new_feed">New Feed</a></li>
+                </ul>
+            </div>
+            <div style="margin-left: 500px;">  
+                <h1>My Feeds</h1>
+                {{#vetFeed}}        
+                <ul>
+                    <li> <a href="/remove_feed/{{id}}">Remove</a> {{name}}</li>
+                </ul>                 
+                {{/vetFeed}} 
+            </div>
+        </div>
+    </body>
+</html>
