@@ -12,6 +12,7 @@ import java.util.List;
  * @author iapereira
  */
 public class Article {
+
     private String title;
     private String link;
     private String imgUrl;
@@ -62,17 +63,17 @@ public class Article {
 
     @Override
     public String toString() {
-        return "Article{" +
-                "title='" + title + '\'' +
-                ", link='" + link + '\'' +
-                ", imgUrl='" + imgUrl + '\'' +
-                ", categories=" + categories +
-                ", publishedDate='" + publishedDate + '\'' +
-                '}';
+        return "Article{"
+                + "title='" + title + '\''
+                + ", link='" + link + '\''
+                + ", imgUrl='" + imgUrl + '\''
+                + ", categories=" + categories
+                + ", publishedDate='" + publishedDate + '\''
+                + '}';
     }
-    
-      public static Article mapToArticle(SyndEntry syndEntry) {
-        Article newsArticle = new Article();    
+
+    public static Article mapToArticle(SyndEntry syndEntry) {
+        Article newsArticle = new Article();
 //          System.out.println("========");
 //          System.out.println(syndEntry.getDescription().getValue());
 //          System.out.println("========");
@@ -92,8 +93,4 @@ public class Article {
     public void setBody(String body) {
         this.body = body;
     }
-
-  
-    
-    
 }
