@@ -18,10 +18,12 @@
                 <h1>Edit Feed</h1>
                 <h2>{{mensagem}}</h2>
                 <form action ="/edit_feed" method="post">
-                    Name: <input type="text" name="name" value="{{name}}" required="required"> <br>
-                    Url: <input type="text" name="url" value="{{url}}" required="required"> <br>
-                    <input type="hidden" name="id" value="{{id}}"> <br>
-                    <input type="submit" value="Edit">
+                    <table>
+                        <tr> <td> Name:  </td> <td> <input type="text" name="name" value="{{name}}" required="required"> </td> </tr>
+                        <tr> <td> Url: </td> <td> <input type="text" name="url" value="{{url}}" required="required"> 
+                        <input type="hidden" name="id" value="{{id}}"> </td> </tr>
+                        <tr> <td colspan="2"> <input type="submit" value="Edit"></td></tr>
+                    </table>
                 </form>
             </div>
         </div>

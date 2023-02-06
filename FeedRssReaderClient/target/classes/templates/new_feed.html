@@ -18,9 +18,11 @@
                 <h1>New Feed</h1>
                 <h2>{{mensagem}}</h2>
                 <form action ="/new_feed" method="post">
-                    Name: <input type="text" name="name" required="required"> <br>
-                    Url: <input type="text" name="url" required="required"> <br>
-                    <input type="submit" value="Add">
+                    <table>
+                        <tr> <td> Name:  </td> <td> <input type="text" name="name" required="required"> </td> </tr>
+                        <tr> <td> Url: </td> <td> <input type="text" name="url" required="required"></td> </tr>
+                        <tr> <td colspan="2">  <input type="submit" value="Add"> </td></tr>
+                    </table>
                 </form>
             </div>
         </div>
