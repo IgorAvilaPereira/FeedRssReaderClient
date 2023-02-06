@@ -64,29 +64,37 @@ public class Feed {
     }
 
     public ArrayList<Article> read() {
-        ArrayList<Article> results = new ArrayList();       
+        ArrayList<Article> results = new ArrayList();
         try {
-            System.out.println("URL:"+this.getUrl());
+            System.out.println("URL:" + this.getUrl());
             URL feedSource = new URL(this.getUrl());
             SyndFeedInput input = new SyndFeedInput();
             SyndFeed feed = input.build(new XmlReader(feedSource));
-            Iterator itr = feed.getEntries().iterator();            
+            Iterator itr = feed.getEntries().iterator();
             while (itr.hasNext()) {
                 SyndEntry syndEntry = (SyndEntry) itr.next();
                 results.add(Article.mapToArticle(syndEntry));
             }
-        } catch(FeedException e){
+        } catch (FeedException ex) {
             System.out.println("========");
             System.out.println("1");
             System.out.println("========");
+//            Logger.getLogger(Feed.class.getName()).log(Level.SEVERE, null, ex);
             return results;
-        } catch (IOException ex) {            
+        } catch (IOException ex) {
             System.out.println("========");
             System.out.println("2");
             System.out.println("========");
-            Logger.getLogger(Feed.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(Feed.class.getName()).log(Level.SEVERE, null, ex);
+            return results;
+        } catch (IllegalArgumentException ex) {
+            System.out.println("========");
+            System.out.println("3");
+            System.out.println("========");
+//            Logger.getLogger(Feed.class.getName()).log(Level.SEVERE, null, ex);
             return results;
         }
+
         return results;
     }
 
@@ -94,7 +102,5 @@ public class Feed {
     public String toString() {
         return "Feed{" + "id=" + id + ", name=" + name + ", url=" + url + '}';
     }
-    
-    
 
 }

@@ -42,7 +42,9 @@ public class FeedDAO {
             feed.setId(rs.getInt("id"));
             feed.setName(rs.getString("name"));
             feed.setUrl(rs.getString("url"));
-            feed.setArticles(feed.read());
+            if (!feed.read().isEmpty()){
+                feed.setArticles(feed.read());
+            }
             vetFeed.add(feed);
         }
         preparedStatement.close();
