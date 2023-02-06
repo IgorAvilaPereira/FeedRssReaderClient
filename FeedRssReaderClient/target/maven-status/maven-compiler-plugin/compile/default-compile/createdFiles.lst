@@ -1,9 +1,9 @@
-negocio/Feed.class
-persistencia/FeedDAO.class
+persistence/FeedDAO.class
 controller/FeedController.class
 trash/ArticleController.class
-negocio/Article.class
 trash/MainTrash.class
-apresentacao/Main.class
-persistencia/MyConnection.class
+model/Feed.class
+main/Main.class
+model/Article.class
+persistence/MyConnection.class
 trash/RSSReaderUtil.class

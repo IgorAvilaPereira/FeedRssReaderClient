@@ -55,12 +55,19 @@ public class FeedController {
 
     }
 
-    public void newFeed(Request rq, Response rs) throws SQLException {
+    public ModelAndView newFeed(Request rq, Response rs) throws SQLException, IOException {
         Feed feed = new Feed();
         feed.setName(rq.queryParams("name"));
         feed.setUrl(rq.queryParams("url"));
-//        System.out.println(feed);
-        this.feedDAO.add(feed);
+        try {
+            if (!feed.read().isEmpty()){
+                this.feedDAO.add(feed);             
+                return this.index(rq, rs);         
+            }
+            return this.screenError(rq, rs, "new_feed.html");
+        } catch (FeedException | MalformedURLException e) {
+          return this.screenError(rq, rs, "new_feed.html");
+        }
     }
 
     public ModelAndView editScreen(Request rq, Response rs) throws SQLException, IOException, FeedException {
@@ -72,11 +79,25 @@ public class FeedController {
         return new ModelAndView(map, "edit_feed.html");
     }
 
-    public void edit(Request rq, Response rs) throws SQLException {
+    public ModelAndView edit(Request rq, Response rs) throws SQLException, IOException {
         Feed feed = new Feed();
         feed.setId(Integer.parseInt(rq.queryParams("id")));
         feed.setName(rq.queryParams("name"));
         feed.setUrl(rq.queryParams("url"));
-        this.feedDAO.update(feed);
+        try {
+            if (!feed.read().isEmpty()){
+                this.feedDAO.update(feed);
+                return this.index(rq, rs);         
+            }
+            return this.screenError(rq, rs, "edit_feed.html");
+        } catch (FeedException | MalformedURLException e) {
+          return this.screenError(rq, rs, "edit_feed.html");
+        }
+    }
+
+    private ModelAndView screenError(Request rq, Response rs, String page) {
+        Map map = new HashMap();
+        map.put("mensagem", "Error! Invalid url");
+        return new ModelAndView(map, page);
     }
 }

@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -61,11 +63,12 @@ public class Feed {
         this.url = url;
     }
 
-    public ArrayList<Article> read() throws IOException {
-        ArrayList<Article> results = new ArrayList();
-        URL feedSource = new URL(this.getUrl());
-        SyndFeedInput input = new SyndFeedInput();
+    public ArrayList<Article> read() {
+        ArrayList<Article> results = new ArrayList();       
         try {
+            System.out.println("URL:"+this.getUrl());
+            URL feedSource = new URL(this.getUrl());
+            SyndFeedInput input = new SyndFeedInput();
             SyndFeed feed = input.build(new XmlReader(feedSource));
             Iterator itr = feed.getEntries().iterator();            
             while (itr.hasNext()) {
@@ -73,6 +76,15 @@ public class Feed {
                 results.add(Article.mapToArticle(syndEntry));
             }
         } catch(FeedException e){
+            System.out.println("========");
+            System.out.println("1");
+            System.out.println("========");
+            return results;
+        } catch (IOException ex) {            
+            System.out.println("========");
+            System.out.println("2");
+            System.out.println("========");
+            Logger.getLogger(Feed.class.getName()).log(Level.SEVERE, null, ex);
             return results;
         }
         return results;

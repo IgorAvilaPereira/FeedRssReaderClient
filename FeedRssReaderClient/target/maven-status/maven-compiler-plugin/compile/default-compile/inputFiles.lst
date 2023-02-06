@@ -1,9 +1,9 @@
 /home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/controller/FeedController.java
+/home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/persistence/MyConnection.java
 /home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/trash/RSSReaderUtil.java
-/home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/persistencia/MyConnection.java
+/home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/model/Article.java
+/home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/persistence/FeedDAO.java
+/home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/main/Main.java
 /home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/trash/MainTrash.java
-/home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/persistencia/FeedDAO.java
-/home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/negocio/Feed.java
+/home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/model/Feed.java
 /home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/trash/ArticleController.java
-/home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/negocio/Article.java
-/home/iapereira/git/FeedRssReaderClient/FeedRssReaderClient/src/main/java/apresentacao/Main.java

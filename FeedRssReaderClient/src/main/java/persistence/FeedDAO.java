@@ -50,16 +50,21 @@ public class FeedDAO {
         return vetFeed;
     }
 
-    public void add(Feed feed) throws SQLException {
-        String sql = "INSERT INTO feeds (name, url) values (?,?);";
-        MyConnection myConnection = new MyConnection();
-        Connection connection = myConnection.getMyConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setString(1, feed.getName());
-        preparedStatement.setString(2, feed.getUrl());
-        preparedStatement.execute();
-        preparedStatement.close();
-        connection.close();
+    public void add(Feed feed) throws SQLException, IOException {
+//        if (!feed.read().isEmpty()) {
+            String sql = "INSERT INTO feeds (name, url) values (?,?);";
+            MyConnection myConnection = new MyConnection();
+            Connection connection = myConnection.getMyConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, feed.getName());
+            preparedStatement.setString(2, feed.getUrl());
+            preparedStatement.execute();
+            preparedStatement.close();
+            connection.close();
+//            return true;
+       /* } else {
+            return false;
+        }*/
     }
 
     public void update(Feed feed) throws SQLException {
