@@ -10,11 +10,13 @@ import com.sun.syndication.io.FeedException;
 import com.sun.syndication.io.SyndFeedInput;
 import com.sun.syndication.io.XmlReader;
 import java.io.IOException;
+import java.io.StringReader;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.xml.sax.InputSource;
 
 /**
  *
@@ -70,6 +72,7 @@ public class Feed {
             URL feedSource = new URL(this.getUrl());
             SyndFeedInput input = new SyndFeedInput();
             SyndFeed feed = input.build(new XmlReader(feedSource));
+//            SyndFeed feed = input.build(new InputSource(getUrl()));
             Iterator itr = feed.getEntries().iterator();
             while (itr.hasNext()) {
                 SyndEntry syndEntry = (SyndEntry) itr.next();
