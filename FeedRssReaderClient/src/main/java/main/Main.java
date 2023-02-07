@@ -34,7 +34,7 @@ public class Main {
         
         get("/edit_feed/:id", (rq, rs) -> new FeedController().editScreen(rq, rs), new MustacheTemplateEngine());
         
-        post("/edit_feed", (rq, rs) -> new FeedController().edit(rq, rs), new MustacheTemplateEngine());
+        post("/edit", (rq, rs) -> new FeedController().edit(rq, rs), new MustacheTemplateEngine());
         
         get("/remove_feed/:id", (rq, rs) -> {
             new FeedController().removeFeed(rq,rs);

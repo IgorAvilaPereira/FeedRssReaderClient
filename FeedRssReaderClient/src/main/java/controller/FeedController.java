@@ -72,11 +72,15 @@ public class FeedController {
 
     public ModelAndView editScreen(Request rq, Response rs) throws SQLException, IOException, FeedException {
         Map map = new HashMap();
-        Feed feed = this.feedDAO.load(Integer.parseInt(rq.params(":id")));
-        map.put("id", feed.getId());
-        map.put("name", feed.getName());
-        map.put("url", feed.getUrl());
-        return new ModelAndView(map, "edit_feed.html");
+        if(!rq.params(":id").equals("style.css")) {        
+            Feed feed = this.feedDAO.load(Integer.parseInt(rq.params(":id")));
+            map.put("id", feed.getId());
+            map.put("name", feed.getName());
+            map.put("url", feed.getUrl());
+            return new ModelAndView(map, "edit_feed.html");
+        } else {
+             return this.screenError(rq, rs, "edit_feed.html");
+        }
     }
 
     public ModelAndView edit(Request rq, Response rs) throws SQLException, IOException {
