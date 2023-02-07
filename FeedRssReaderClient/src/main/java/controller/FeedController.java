@@ -39,6 +39,17 @@ public class FeedController {
 //        rs.type("text/html");
         return new ModelAndView(map, "index.html");
     }
+    
+    public ModelAndView view(Request rq, Response rs) throws MalformedURLException, IOException, FeedException, SQLException {
+        Map map = new HashMap();        
+        Feed feed = this.feedDAO.load(Integer.parseInt(rq.params(":id")));
+        feed.setArticles(feed.read());                        
+        ArrayList vetFeed = new ArrayList();
+        vetFeed.add(feed);
+        map.put("vetFeed", vetFeed);
+        return new ModelAndView(map, "index.html");
+    }
+
 
     public ModelAndView myFeeds() throws MalformedURLException, IOException, FeedException, SQLException {
         Map map = new HashMap();

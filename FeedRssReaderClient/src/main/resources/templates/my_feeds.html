@@ -1,10 +1,10 @@
 {{< base }}
-  {{$ body }}
-                <h1>My Feeds</h1>
-                {{#vetFeed}}        
-                <ul>
-                    <li> <a href="/remove_feed/{{id}}">Remove</a> <a href="/edit_feed/{{id}}">Edit</a> {{name}}</li>
-                </ul>                 
-                {{/vetFeed}} 
-           {{/ body }}
+{{$ body }}
+    <h1>My Feeds</h1>
+    {{#vetFeed}}
+    <ul>
+        <li> <a href="/view_feed/{{id}}">View</a> <a href="/remove_feed/{{id}}">Remove</a> <a href="/edit_feed/{{id}}">Edit</a> {{name}}</li>
+    </ul>                 
+    {{/vetFeed}} 
+{{/ body }}
 {{/ base }}

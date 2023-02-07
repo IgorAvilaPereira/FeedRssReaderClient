@@ -27,13 +27,13 @@ public class Main {
         myConnection.createFeedsTable();        
         
         get("/", (rq, rs) -> new FeedController().index(rq, rs), new MustacheTemplateEngine());
-        get("/my_feeds", (rq, rs) -> new FeedController().myFeeds(), new MustacheTemplateEngine());                       
-        get("/new_feed", (rq, rs) -> new ModelAndView(new HashMap(), "new_feed.html"), new MustacheTemplateEngine());        
+        get("/my_feeds", (rq, rs) -> new FeedController().myFeeds(), new MustacheTemplateEngine());                      
+        get("/view_feed/:id", (rq, rs) -> new FeedController().view(rq, rs), new MustacheTemplateEngine());
         
+        get("/new_feed", (rq, rs) -> new ModelAndView(new HashMap(), "new_feed.html"), new MustacheTemplateEngine());        
         post("/new_feed", (rq, rs) -> new FeedController().newFeed(rq, rs), new MustacheTemplateEngine());
         
-        get("/edit_feed/:id", (rq, rs) -> new FeedController().editScreen(rq, rs), new MustacheTemplateEngine());
-        
+        get("/edit_feed/:id", (rq, rs) -> new FeedController().editScreen(rq, rs), new MustacheTemplateEngine());        
         post("/edit", (rq, rs) -> new FeedController().edit(rq, rs), new MustacheTemplateEngine());
         
         get("/remove_feed/:id", (rq, rs) -> {
