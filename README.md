@@ -15,7 +15,7 @@ Cliente Java para leitura e gerenciamento de feeds RSS. Ele permite buscar, exib
 * Bibliotecas para parsing de XML/RSS
 * Maven para gerenciamento de dependências
 * SQlite
-* [Spark Java](https://sparkjava.com/). 
+* Microframework Spark Java
 
 ## Estrutura do projeto
 
