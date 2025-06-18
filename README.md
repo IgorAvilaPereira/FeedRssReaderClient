@@ -21,7 +21,7 @@ Cliente Java para leitura e gerenciamento de feeds RSS. Ele permite buscar, exib
 
 * `src/main/java` — código-fonte principal.
 * `src/test/java` — testes unitários.
-* `pom.xml` ou `build.gradle` — arquivo de build e dependências.
+* `pom.xml` — arquivo de build e dependências.
 
 ## Como executar
 
