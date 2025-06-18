@@ -28,7 +28,7 @@ Cliente Java para leitura e gerenciamento de feeds RSS. Ele permite buscar, exib
 ### Pré-requisitos
 
 * JDK 8 ou superior instalado
-* Maven ou Gradle instalado (dependendo do projeto)
+* Maven instalado 
 
 ## Como contribuir
 
